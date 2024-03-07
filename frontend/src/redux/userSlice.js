@@ -195,7 +195,7 @@ const userSlice = createSlice({
         },
         getError: (state, action) => {
             state.loading = false;
-            state.error = action.payload;
+            state.error = action.payloadz;
         },
 
         getDeleteSuccess: (state) => {

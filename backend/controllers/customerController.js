@@ -6,7 +6,7 @@ const customerRegister = async (req, res) => {
     try {
         const salt = await bcrypt.genSalt(10);
         const hashedPass = await bcrypt.hash(req.body.password, salt);
-
+        console.log(req.body)
         const customer = new Customer({
             ...req.body,
             password: hashedPass

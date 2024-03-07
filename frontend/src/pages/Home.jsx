@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { Box, Container, styled } from '@mui/material';
-import Slide from './Slide';
-import Banner from './Banner';
-import { useDispatch, useSelector } from 'react-redux';
-import { getProducts } from '../redux/userHandle';
-import ProductsMenu from './customer/components/ProductsMenu';
-import { NewtonsCradle } from '@uiball/loaders';
-import { Link } from 'react-router-dom';
-
+import React, { useEffect, useState } from "react";
+import { Box, Container, styled } from "@mui/material";
+import { NewtonsCradle } from "@uiball/loaders";
+import Slide from "./Slide";
+import Banner from "./Banner";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../redux/userHandle";
+import ProductsMenu from "./customer/components/ProductsMenu";
+import image1 from '../assets/images/image3.png'
+import { Link } from "react-router-dom";
+import Footer from "./seller/Footter";
 const Home = () => {
-  const adURL =
-    'https://rukminim1.flixcart.com/flap/464/708/image/1f03e99f6dc9f7a6.jpg?q=70';
-
+ 
   const dispatch = useDispatch();
 
-  const { productData, responseProducts, error } = useSelector((state) => state.user);
+  const { productData, responseProducts, error } = useSelector(
+    (state) => state.user
+  );
 
   const [showNetworkError, setShowNetworkError] = useState(false);
 
@@ -26,19 +27,20 @@ const Home = () => {
     if (error) {
       const timeoutId = setTimeout(() => {
         setShowNetworkError(true);
-      }, 40000);
+      }, 4000);
 
       return () => clearTimeout(timeoutId);
     }
   }, [error]);
 
   return (
+    <>
     <div id="top">
       <Container
         sx={{
-          display: 'none',
-          '@media (max-width: 600px)': {
-            display: 'flex',
+          display: "none",
+          "@media (max-width: 600px)": {
+            display: "flex",
           },
         }}
       >
@@ -55,7 +57,7 @@ const Home = () => {
         </StyledContainer>
       ) : error ? (
         <StyledContainer>
-          <h1>Please Wait A Second</h1>
+          <h1>Please Wait...</h1>
           <NewtonsCradle size={70} speed={1.4} color="black" />
         </StyledContainer>
       ) : (
@@ -65,9 +67,7 @@ const Home = () => {
               <StyledContainer>No products found right now</StyledContainer>
               <StyledContainer>
                 Become a seller to add products
-                <Link to={"/Sellerregister"}>
-                  Join
-                </Link>
+                <Link to={"/Sellerregister"}>Join</Link>
               </StyledContainer>
             </>
           ) : (
@@ -75,14 +75,14 @@ const Home = () => {
               <Component>
                 <LeftComponent>
                   <Slide products={productData} title="Top Selection" />
-                </LeftComponent>
+                </LeftComponent> 
 
-                <RightComponent>
-                  <img src={adURL} alt="" style={{ width: 217 }} />
+                 <RightComponent>
+                  <img src={image1} alt="" style={{ width:'200px',height:'200px' }} />
                 </RightComponent>
               </Component>
 
-              <Slide products={productData} title="Deals of the Day" />
+              {/* <Slide products={productData} title="Deals of the Day" /> */}
               <Slide products={productData} title="Suggested Items" />
               <Slide products={productData} title="Discounts for You" />
               <Slide products={productData} title="Recommended Items" />
@@ -91,6 +91,8 @@ const Home = () => {
         </>
       )}
     </div>
+    <Footer/>
+   </>
   );
 };
 
@@ -106,28 +108,32 @@ const StyledContainer = styled(Container)`
 
 const BannerBox = styled(Box)`
   padding: 20px 10px;
-  background: #F2F2F2;
+  background: #f2f2f2;
 `;
 
 const Component = styled(Box)`
-  display: flex;
+display: flex;
+justify-content: center;
+align-items: center;
+width:auto-fill
+
 `;
 
 const LeftComponent = styled(Box)(({ theme }) => ({
-  width: '83%',
-  [theme.breakpoints.down('md')]: {
-    width: '100%',
+  width: "83%",
+  [theme.breakpoints.down("md")]: {
+    width: "100%",
   },
 }));
 
 const RightComponent = styled(Box)(({ theme }) => ({
   marginTop: 10,
-  background: '#FFFFFF',
-  width: '17%',
+  background: "#FFFFFF",
+  width: "17%",
   marginLeft: 10,
   padding: 5,
-  textAlign: 'center',
-  [theme.breakpoints.down('md')]: {
-    display: 'none',
+  textAlign: "center",
+  [theme.breakpoints.down("md")]: {
+    display: "none",
   },
 }));

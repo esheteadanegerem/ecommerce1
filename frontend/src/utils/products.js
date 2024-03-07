@@ -1,3 +1,6 @@
+
+//import image6 from '../assets/images/image8.webp'
+
 export const productDataList = [
   {
     productName: "SAMSUNG Galaxy S22 5G (Phantom White, 128 GB)  (8 GB RAM)",
@@ -270,11 +273,12 @@ export const productDataList = [
     seller: "652ebf61b409f906d81645a3",
   },
 ];
-
+// 'https://rukminim1.flixcart.com/flap/3376/560/image/8464e4d9a75b909a.jpg?q=50'
+//'https://rukminim1.flixcart.com/flap/3376/560/image/a5320d3f852657e8.jpg?q=50'
 export const bannerData = [
-  { _id: 1, url: 'https://rukminim1.flixcart.com/flap/3376/560/image/8464e4d9a75b909a.jpg?q=50' },
-  { _id: 2, url: 'https://rukminim1.flixcart.com/flap/3376/560/image/a5320d3f852657e8.jpg?q=50' },
-  { _id: 3, url: 'https://rukminim1.flixcart.com/flap/3376/560/image/5df65ad101e18dbf.jpg?q=50' },
-  { _id: 4, url: 'https://rukminim1.flixcart.com/flap/3376/560/image/8a89ee09acc1a9e5.jpg?q=50' },
-  { _id: 5, url: 'https://rukminim1.flixcart.com/flap/3376/560/image/ed12b7707a04473c.jpg?q=50' },
+  { _id: 1,url :'https://png.pngtree.com/background/20230618/original/pngtree-online-shopping-in-ethiopia-a-3d-simulation-for-social-media-and-picture-image_3758992.jpg'},
+  { _id: 2, url:'https://ethiopiangobgnu.com/siteAdmin/Blog%20images/Visit%20Ethiopia-64fb558d8eaa09.75358091.webp' },
+  { _id: 3, url: 'https://ethiosuq.com/storage/2020/08/Acc.jpg' },
+  { _id: 4, url: 'https://waltainfo.com/wp-content/uploads/2022/01/Ethiopian-Airlines-787.jpg' },
+ { _id: 5, url: 'https://news.columbusstate.edu/images/2023.08_economic_impact_news_image.png' },
 ]

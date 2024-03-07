@@ -5,7 +5,8 @@ import { bannerData } from '../utils/products';
 
 const Banner = () => {
     return (
-        <Carousel
+        <Carousel style={{  alignItems:'center',
+        alignContent:"center",}}
             swipeable={false}
             draggable={false}
             responsive={responsive}
@@ -47,6 +48,7 @@ const responsive = {
 
 const Image = styled('img')(({ theme }) => ({
     width: '100%',
+
     height: 230,
     [theme.breakpoints.down('sm')]: {
         objectFit: 'cover',

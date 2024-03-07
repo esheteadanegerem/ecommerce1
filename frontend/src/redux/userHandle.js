@@ -26,7 +26,7 @@ import {
     updateCurrentUser,
 } from './userSlice';
 //url
-const url='http://localhost:5000'
+const url='https://ecommerce1-kykb.onrender.com'
 export const authUser = (fields, role, mode) => async (dispatch) => {
     dispatch(authRequest());
 

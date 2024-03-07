@@ -6,7 +6,7 @@
   "scripts": {
     
       "start": "node index.js",
-      "dev": "NODE_ENV=development nodemon server.js",c
+      "dev": "NODE_ENV=development nodemon server.js",
       "build": "npm i",
       "debug": "ndb index.js"
     
